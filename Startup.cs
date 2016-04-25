@@ -33,7 +33,9 @@ namespace SelfHostedWebApiDataService
 
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<ChangeMeasure>("ChangeMeasure");
-            
+            builder.EntitySet<Account>("Account");
+            builder.EntitySet<AccountAlia>("AccountAlias");
+            builder.EntitySet<AccountTool>("AccountTools");
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: null,

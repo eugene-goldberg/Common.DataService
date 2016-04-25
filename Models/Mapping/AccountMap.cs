@@ -8,15 +8,12 @@ namespace CommonDataService.Models.Mapping
         public AccountMap()
         {
             // Primary Key
-            this.HasKey(t => t.AccountID);
+            this.HasKey(t => t.ID);
 
             // Properties
-            this.Property(t => t.AccountID)
-                .IsRequired()
-                .HasMaxLength(128);
-
             // Table & Column Mappings
             this.ToTable("Accounts");
+            this.Property(t => t.ID).HasColumnName("ID");
             this.Property(t => t.AccountID).HasColumnName("AccountID");
             this.Property(t => t.AccountName).HasColumnName("AccountName");
             this.Property(t => t.ParentAccountId).HasColumnName("ParentAccountId");
@@ -49,35 +46,6 @@ namespace CommonDataService.Models.Mapping
             this.Property(t => t.PrimaryDeliveryRegion).HasColumnName("PrimaryDeliveryRegion");
             this.Property(t => t.OedRegion).HasColumnName("OedRegion");
             this.Property(t => t.LeadOffering).HasColumnName("LeadOffering");
-            this.Property(t => t.AccountProgram_AccountProgramID).HasColumnName("AccountProgram_AccountProgramID");
-            this.Property(t => t.AccountRolePerson_AccountRolePersonID).HasColumnName("AccountRolePerson_AccountRolePersonID");
-
-            // Relationships
-            this.HasMany(t => t.Services)
-                .WithMany(t => t.Accounts)
-                .Map(m =>
-                    {
-                        m.ToTable("ServiceAccounts");
-                        m.MapLeftKey("Account_AccountID");
-                        m.MapRightKey("Service_ServiceID");
-                    });
-
-            this.HasMany(t => t.Tools)
-                .WithMany(t => t.Accounts)
-                .Map(m =>
-                    {
-                        m.ToTable("ToolAccounts");
-                        m.MapLeftKey("Account_AccountID");
-                        m.MapRightKey("Tool_ID");
-                    });
-
-            this.HasOptional(t => t.AccountProgram)
-                .WithMany(t => t.Accounts)
-                .HasForeignKey(d => d.AccountProgram_AccountProgramID);
-            this.HasOptional(t => t.AccountRolePerson)
-                .WithMany(t => t.Accounts)
-                .HasForeignKey(d => d.AccountRolePerson_AccountRolePersonID);
-
         }
     }
 }

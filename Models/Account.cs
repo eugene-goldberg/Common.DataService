@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CommonDataService.Models
 {
@@ -8,10 +10,11 @@ namespace CommonDataService.Models
         public Account()
         {
             this.AccountAlias = new List<AccountAlia>();
-            this.Services = new List<Service>();
-            this.Tools = new List<Tool>();
+            this.ChangeMeasures = new List<ChangeMeasure>();
+            this.AccountTools = new List<AccountTool>();
         }
-
+        [Key]
+        public int ID { get; set; }
         public string AccountID { get; set; }
         public string AccountName { get; set; }
         public string ParentAccountId { get; set; }
@@ -21,17 +24,17 @@ namespace CommonDataService.Models
         public string Customer { get; set; }
         public string SnowDomainName { get; set; }
         public string CapCode { get; set; }
-        public double AccountTcvPotential { get; set; }
-        public double AccountTcvAwarded { get; set; }
-        public System.DateTime ContractStartDate { get; set; }
-        public System.DateTime ContractExpiryDate { get; set; }
+        public Nullable<double> AccountTcvPotential { get; set; }
+        public Nullable<double> AccountTcvAwarded { get; set; }
+        public Nullable<System.DateTime> ContractStartDate { get; set; }
+        public Nullable<System.DateTime> ContractExpiryDate { get; set; }
         public string ContractType { get; set; }
-        public double ContractTermInMonth { get; set; }
-        public int CurrentContractYear { get; set; }
+        public Nullable<double> ContractTermInMonth { get; set; }
+        public Nullable<int> CurrentContractYear { get; set; }
         public string ContractBaseOptions { get; set; }
         public string SfdcIdNumber { get; set; }
-        public bool HasServiceLevelAgreements { get; set; }
-        public bool HasContractualReportingRequirements { get; set; }
+        public Nullable<bool> HasServiceLevelAgreements { get; set; }
+        public Nullable<bool> HasContractualReportingRequirements { get; set; }
         public string AccountFinancialsParentFamily { get; set; }
         public string PaymentTerms { get; set; }
         public string SecurityRestrictions { get; set; }
@@ -44,12 +47,8 @@ namespace CommonDataService.Models
         public string PrimaryDeliveryRegion { get; set; }
         public string OedRegion { get; set; }
         public string LeadOffering { get; set; }
-        public Nullable<int> AccountProgram_AccountProgramID { get; set; }
-        public Nullable<int> AccountRolePerson_AccountRolePersonID { get; set; }
         public virtual ICollection<AccountAlia> AccountAlias { get; set; }
-        public virtual AccountProgram AccountProgram { get; set; }
-        public virtual AccountRolePerson AccountRolePerson { get; set; }
-        public virtual ICollection<Service> Services { get; set; }
-        public virtual ICollection<Tool> Tools { get; set; }
+        public virtual ICollection<ChangeMeasure> ChangeMeasures { get; set; }
+        public virtual ICollection<AccountTool> AccountTools { get; set; }
     }
 }
