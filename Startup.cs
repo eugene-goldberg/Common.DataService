@@ -48,6 +48,12 @@ namespace SelfHostedWebApiDataService
             builder.EntitySet<Industry>("Industry");
             builder.EntitySet<Offering>("Offering");
             builder.EntitySet<RegionAlia>("RegionAlias");
+            //UDM Entities
+            builder.EntitySet<Fact>("Fact");
+            builder.EntitySet<DimVip>("DimVip");
+            builder.EntitySet<DimTime>("DimTime");
+            builder.EntitySet<DimSubjectType>("DimSubjectType");
+            builder.EntitySet<DimStatu>("DimStatus");
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: null,
