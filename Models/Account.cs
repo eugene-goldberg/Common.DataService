@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CommonDataService.Models
 {
@@ -47,7 +46,13 @@ namespace CommonDataService.Models
         public string PrimaryDeliveryRegion { get; set; }
         public string OedRegion { get; set; }
         public string LeadOffering { get; set; }
+        public Nullable<int> AccountRolePerson_AccountRolePersonID { get; set; }
+        public Nullable<int> Service_ServiceID { get; set; }
+        public Nullable<int> AccountProgram_AccountProgramID { get; set; }
         public virtual ICollection<AccountAlia> AccountAlias { get; set; }
+        public virtual AccountProgram AccountProgram { get; set; }
+        public virtual AccountRolePerson AccountRolePerson { get; set; }
+        public virtual Service Service { get; set; }
         public virtual ICollection<ChangeMeasure> ChangeMeasures { get; set; }
         public virtual ICollection<AccountTool> AccountTools { get; set; }
     }

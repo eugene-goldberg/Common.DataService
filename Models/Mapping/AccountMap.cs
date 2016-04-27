@@ -46,6 +46,21 @@ namespace CommonDataService.Models.Mapping
             this.Property(t => t.PrimaryDeliveryRegion).HasColumnName("PrimaryDeliveryRegion");
             this.Property(t => t.OedRegion).HasColumnName("OedRegion");
             this.Property(t => t.LeadOffering).HasColumnName("LeadOffering");
+            this.Property(t => t.AccountRolePerson_AccountRolePersonID).HasColumnName("AccountRolePerson_AccountRolePersonID");
+            this.Property(t => t.Service_ServiceID).HasColumnName("Service_ServiceID");
+            this.Property(t => t.AccountProgram_AccountProgramID).HasColumnName("AccountProgram_AccountProgramID");
+
+            // Relationships
+            this.HasOptional(t => t.AccountProgram)
+                .WithMany(t => t.Accounts)
+                .HasForeignKey(d => d.AccountProgram_AccountProgramID);
+            this.HasOptional(t => t.AccountRolePerson)
+                .WithMany(t => t.Accounts)
+                .HasForeignKey(d => d.AccountRolePerson_AccountRolePersonID);
+            this.HasOptional(t => t.Service)
+                .WithMany(t => t.Accounts)
+                .HasForeignKey(d => d.Service_ServiceID);
+
         }
     }
 }
