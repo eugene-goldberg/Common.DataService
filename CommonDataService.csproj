@@ -171,16 +171,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountAliasController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountProgramController.cs" />
     <Compile Include="Controllers\AccountRolePersonController.cs" />
     <Compile Include="Controllers\ChangeMeasureController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\IndustryController.cs" />
+    <Compile Include="Controllers\OfferingController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\ProgramController.cs" />
+    <Compile Include="Controllers\RegionAliasController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
+    <Compile Include="Controllers\ToolController.cs" />
     <Compile Include="CustomContentTypeProvider.cs" />
     <Compile Include="CustomMiddleware.cs" />
     <Compile Include="Models\Account.cs" />
@@ -189,6 +196,8 @@
     <Compile Include="Models\AccountRolePerson.cs" />
     <Compile Include="Models\AccountTool.cs" />
     <Compile Include="Models\ChangeMeasure.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Industry.cs" />
     <Compile Include="Models\MALContext.cs" />
     <Compile Include="Models\Mapping\AccountAliaMap.cs" />
     <Compile Include="Models\Mapping\AccountMap.cs" />
@@ -196,14 +205,24 @@
     <Compile Include="Models\Mapping\AccountRolePersonMap.cs" />
     <Compile Include="Models\Mapping\AccountToolMap.cs" />
     <Compile Include="Models\Mapping\ChangeMeasureMap.cs" />
+    <Compile Include="Models\Mapping\CountryMap.cs" />
+    <Compile Include="Models\Mapping\IndustryMap.cs" />
+    <Compile Include="Models\Mapping\OfferingMap.cs" />
     <Compile Include="Models\Mapping\PersonMap.cs" />
     <Compile Include="Models\Mapping\ProgramMap.cs" />
+    <Compile Include="Models\Mapping\RegionAliaMap.cs" />
+    <Compile Include="Models\Mapping\RegionMap.cs" />
     <Compile Include="Models\Mapping\RoleMap.cs" />
     <Compile Include="Models\Mapping\ServiceMap.cs" />
+    <Compile Include="Models\Mapping\ToolMap.cs" />
+    <Compile Include="Models\Offering.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Program.cs" />
+    <Compile Include="Models\Region.cs" />
+    <Compile Include="Models\RegionAlia.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\Tool.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelfHostServiceBase.cs">

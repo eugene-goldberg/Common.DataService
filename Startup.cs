@@ -42,6 +42,12 @@ namespace SelfHostedWebApiDataService
             builder.EntitySet<AccountRolePerson>("AccountRolePerson");
             builder.EntitySet<AccountProgram>("AccountProgram");
             builder.EntitySet<CommonDataService.Models.Program>("Program");
+            builder.EntitySet<CommonDataService.Models.Tool>("Tool");
+            builder.EntitySet<Country>("Country");
+            builder.EntitySet<Region>("Region");
+            builder.EntitySet<Industry>("Industry");
+            builder.EntitySet<Offering>("Offering");
+            builder.EntitySet<RegionAlia>("RegionAlias");
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: null,
