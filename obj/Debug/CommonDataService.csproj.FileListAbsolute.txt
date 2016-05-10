@@ -73,3 +73,4 @@ C:\Projects\Common.DataService\bin\Debug\zh-Hans\Microsoft.Spatial.resources.dll
 C:\Projects\Common.DataService\bin\Debug\zh-Hant\Microsoft.Spatial.resources.dll
 C:\Projects\Common.DataService\obj\Debug\CommonDataService.exe
 C:\Projects\Common.DataService\obj\Debug\CommonDataService.pdb
+C:\Projects\Common.DataService\bin\Debug\kafka-net.dll
