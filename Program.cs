@@ -10,29 +10,32 @@ using KafkaNet.Model;
 using KafkaNet.Protocol;
 using System.Linq;
 using Newtonsoft.Json;
+using CommonDataService.Models;
 
 namespace SelfHostedWebApiDataService
 {
     
     class Program
     {
-        public class MyModel
-        {
-            public  string INCIDENTNUMBER { get; set; }
-            public  string SUBMITTER { get; set; }
-            public  DateTime REPORTEDDATE { get; set; }
-            public  DateTime LASTRESOLVEDDATE { get; set; }
-            public  string OWNERGROUP { get; set; }
-            public  string COMPANY { get; set; }
-            public  string CATEGORIZATIONTIER1 { get; set; }
-            public  string VATEGORIZATIONTIER2 { get; set; }
-            public  string CATEGORIZATIONTIER3 { get; set; }
-            public  string RESOLUTIONCATEGORY { get; set; }
-            public  string RESOLUTIONCATEGORYTIER2 { get; set; }
-            public  string RESOLUTIONCATEGORYTIER3 { get; set; }
-            public  string REPORTEDSOURCE { get; set; }
-            public  string DESCRIPTION { get; set; }
-        }
+        static MALContext db = new MALContext();
+
+        //public class Incident
+        //{
+        //    public  string INCIDENTNUMBER { get; set; }
+        //    public  string SUBMITTER { get; set; }
+        //    public  DateTime REPORTEDDATE { get; set; }
+        //    public  DateTime LASTRESOLVEDDATE { get; set; }
+        //    public  string OWNERGROUP { get; set; }
+        //    public  string COMPANY { get; set; }
+        //    public  string CATEGORIZATIONTIER1 { get; set; }
+        //    public  string VATEGORIZATIONTIER2 { get; set; }
+        //    public  string CATEGORIZATIONTIER3 { get; set; }
+        //    public  string RESOLUTIONCATEGORY { get; set; }
+        //    public  string RESOLUTIONCATEGORYTIER2 { get; set; }
+        //    public  string RESOLUTIONCATEGORYTIER3 { get; set; }
+        //    public  string REPORTEDSOURCE { get; set; }
+        //    public  string DESCRIPTION { get; set; }
+        //}
         public static async Task KafkaConsumerAsync()
             {
              string s1 = await ReadKafkaMessagesAsync();
@@ -61,17 +64,20 @@ namespace SelfHostedWebApiDataService
             {
                 string stringValue = System.Text.Encoding.Default.GetString(message.Value);
 
-                var models = JsonConvert.DeserializeObject<IList<MyModel>>(stringValue);
+                var models = JsonConvert.DeserializeObject<IList<Incident>>(stringValue);
 
-                foreach (MyModel model in models)
+                foreach (Incident incident in models)
                 {
                     Debug.WriteLine("MODEL:");
-                    Debug.WriteLine(model.INCIDENTNUMBER);
-                    Debug.WriteLine(model.SUBMITTER);
-                    Debug.WriteLine(model.REPORTEDDATE);
-                    Debug.WriteLine(model.OWNERGROUP);
+                    Debug.WriteLine(incident.INCIDENTNUMBER);
+                    Debug.WriteLine(incident.SUBMITTER);
+                    Debug.WriteLine(incident.REPORTEDDATE);
+                    Debug.WriteLine(incident.OWNERGROUP);
                     Debug.WriteLine("MODEL END:");
                     Debug.WriteLine("\n\n");
+
+                    db.Entry(incident).State = System.Data.Entity.EntityState.Added;
+                    db.SaveChanges();
                 }
             }
 

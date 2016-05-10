@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace CommonDataService.Models
 {
     public partial class AccountAlia
     {
-        [Key]
         public int ID { get; set; }
         public int AccountAlilasID { get; set; }
         public string AliasName { get; set; }
@@ -14,6 +12,8 @@ namespace CommonDataService.Models
         public string SourceColumn { get; set; }
         public string SourceValue { get; set; }
         public Nullable<int> Account_ID { get; set; }
+        public string ToolInstanceName { get; set; }
+        public string ProcessArea { get; set; }
         public virtual Account Account { get; set; }
     }
 }

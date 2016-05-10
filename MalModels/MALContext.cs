@@ -23,6 +23,7 @@ namespace CommonDataService.Models
         public DbSet<AccountTool> AccountTools { get; set; }
         public DbSet<ChangeMeasure> ChangeMeasures { get; set; }
         public DbSet<Country> Countries { get; set; }
+        public DbSet<Incident> Incidents { get; set; }
         public DbSet<Industry> Industries { get; set; }
         public DbSet<Offering> Offerings { get; set; }
         public DbSet<Person> People { get; set; }
@@ -42,6 +43,7 @@ namespace CommonDataService.Models
             modelBuilder.Configurations.Add(new AccountToolMap());
             modelBuilder.Configurations.Add(new ChangeMeasureMap());
             modelBuilder.Configurations.Add(new CountryMap());
+            modelBuilder.Configurations.Add(new IncidentMap());
             modelBuilder.Configurations.Add(new IndustryMap());
             modelBuilder.Configurations.Add(new OfferingMap());
             modelBuilder.Configurations.Add(new PersonMap());

@@ -20,6 +20,8 @@ namespace CommonDataService.Models.Mapping
             this.Property(t => t.SourceColumn).HasColumnName("SourceColumn");
             this.Property(t => t.SourceValue).HasColumnName("SourceValue");
             this.Property(t => t.Account_ID).HasColumnName("Account_ID");
+            this.Property(t => t.ToolInstanceName).HasColumnName("ToolInstanceName");
+            this.Property(t => t.ProcessArea).HasColumnName("ProcessArea");
 
             // Relationships
             this.HasOptional(t => t.Account)

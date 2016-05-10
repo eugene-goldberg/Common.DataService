@@ -201,6 +201,7 @@
     <Compile Include="MalModels\AccountTool.cs" />
     <Compile Include="MalModels\ChangeMeasure.cs" />
     <Compile Include="MalModels\Country.cs" />
+    <Compile Include="MalModels\Incident.cs" />
     <Compile Include="MalModels\Industry.cs" />
     <Compile Include="MalModels\MALContext.cs" />
     <Compile Include="MalModels\Mapping\AccountAliaMap.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="MalModels\Mapping\AccountToolMap.cs" />
     <Compile Include="MalModels\Mapping\ChangeMeasureMap.cs" />
     <Compile Include="MalModels\Mapping\CountryMap.cs" />
+    <Compile Include="MalModels\Mapping\IncidentMap.cs" />
     <Compile Include="MalModels\Mapping\IndustryMap.cs" />
     <Compile Include="MalModels\Mapping\OfferingMap.cs" />
     <Compile Include="MalModels\Mapping\PersonMap.cs" />
