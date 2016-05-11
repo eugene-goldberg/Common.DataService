@@ -54,6 +54,7 @@ namespace SelfHostedWebApiDataService
             builder.EntitySet<DimTime>("DimTime");
             builder.EntitySet<DimSubjectType>("DimSubjectType");
             builder.EntitySet<DimStatu>("DimStatus");
+            builder.EntitySet<Incident>("Incident");
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
                 routePrefix: null,

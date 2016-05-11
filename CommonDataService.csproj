@@ -234,6 +234,7 @@
     <Compile Include="UdmControllers\DimTimeController.cs" />
     <Compile Include="UdmControllers\DimVipController.cs" />
     <Compile Include="UdmControllers\FactController.cs" />
+    <Compile Include="UdmControllers\IncidentController.cs" />
     <Compile Include="UdmModels\DimAccount.cs" />
     <Compile Include="UdmModels\DimAgent.cs" />
     <Compile Include="UdmModels\DimCauseCode.cs" />

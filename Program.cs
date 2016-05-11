@@ -85,7 +85,7 @@ namespace SelfHostedWebApiDataService
         }
         static void Main(string[] args)
         {
-            StartConsole();
+            //StartConsole();
 
             StartTopshelf();
         }
