@@ -24,6 +24,7 @@ namespace CommonDataService.UdmControllers
         }
 
         [EnableQuery]
+        [RouteAccessControl]
         public IQueryable<Incident> Get()
         {
             return db.Incidents;

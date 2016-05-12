@@ -10,10 +10,13 @@ using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 using System.Web.Http.Cors;
 using CommonDataService.Models;
+using System.Web.OData;
+using System.Net.Http;
+using System.Web.OData.Query;
+using CommonDataService;
 
 namespace SelfHostedWebApiDataService
-{
-    
+{   
     public class Startup
     {
         public void Configuration(IAppBuilder app)
@@ -59,6 +62,8 @@ namespace SelfHostedWebApiDataService
                 routeName: "ODataRoute",
                 routePrefix: null,
                 model: builder.GetEdmModel());
+
+            //config.AddODataQueryFilter(new SecureAccessAttribute());
 
 
             // Adding to the pipeline with our own middleware

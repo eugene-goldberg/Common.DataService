@@ -52,12 +52,12 @@ namespace SelfHostedWebApiDataService
             var options = new KafkaOptions(new Uri("http://13.89.38.33:9092"), new Uri("http://13.89.38.33:9092"));
             var router = new BrokerRouter(options);
 
-            var consumerOffset = new Consumer(new ConsumerOptions("ora1", router));
+            var consumerOffset = new Consumer(new ConsumerOptions("ora3", router));
 
-            var offsets = consumerOffset.GetTopicOffsetAsync("ora1").Result
+            var offsets = consumerOffset.GetTopicOffsetAsync("ora3").Result
                    .Select(x => new OffsetPosition(x.PartitionId, x.Offsets.Max())).ToArray();
 
-            var consumer = new Consumer(new ConsumerOptions("ora1", router), offsets);
+            var consumer = new Consumer(new ConsumerOptions("ora3", router), offsets);
 
             //Consume returns a blocking IEnumerable (ie: never ending stream)
             foreach (var message in consumer.Consume())
@@ -85,7 +85,7 @@ namespace SelfHostedWebApiDataService
         }
         static void Main(string[] args)
         {
-            //StartConsole();
+            StartConsole();
 
             StartTopshelf();
         }

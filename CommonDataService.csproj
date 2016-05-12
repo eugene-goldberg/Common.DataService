@@ -229,6 +229,7 @@
     <Compile Include="MalModels\Role.cs" />
     <Compile Include="MalModels\Service.cs" />
     <Compile Include="MalModels\Tool.cs" />
+    <Compile Include="RouteAccessControl.cs" />
     <Compile Include="UdmControllers\DimStatusController.cs" />
     <Compile Include="UdmControllers\DimSubjectTypeController.cs" />
     <Compile Include="UdmControllers\DimTimeController.cs" />
